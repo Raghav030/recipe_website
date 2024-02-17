@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary p-3 bg-primary shadow-lg">
+        <form class="container-fluid ">
+            <a class="navbar-brand">Navbar</a>
+          <button class="btn btn-success me-2" type="button">
+            {% if request.user.is_authenticated %} <a href="/logout/" class="text-dark" type="submit">Logout</a>
+        {% else %} <a href="/login/" class="text-dark" type="submit">Login</a>
+        {% endif %}
+    </button>
+        </form>
+      </nav>
+    {%block start%}
+    {%endblock%}
+</body>
+</html>
